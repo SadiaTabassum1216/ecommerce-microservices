@@ -136,53 +136,44 @@ The E-commerce Microservices Project is a modern and scalable e-commerce platfor
 
 1. **Clone the Repository:**
    ```bash
-   git clone https://github.com/your-username/ecommerce-microservices.git
-   cd ecommerce-microservices
-Install Dependencies for the Client:
+   git clone https://github.com/navid001/ecommerce-microservices.git
+   cd ecommerce-microservices 
+   
+1. **Install Dependencies for the Client:**
 
-bash
-Copy code
-# In the client directory
-npm install
-Install Dependencies for the Server:
+    - In the client directory
+        ```bash 
+        npm install 
+1. **Install Dependencies for the Server:**
 
-bash
-Copy code
-# In the server directory
-npm install
-Set Up MongoDB Atlas:
+    - In the server directory
+        ```bash
+        npm install
 
-Create a MongoDB Atlas account.
-Create a cluster and obtain the connection string.
-Set Up Environment Variables:
+1. **Set Up MongoDB Atlas:**
 
-In the root directory, create a .env file.
-Add the following content:
-env
-Copy code
-MONGO_URI=your_mongo_connection_string
-Build and Run the Project:
+    - Create a MongoDB Atlas account.
+    - Create a cluster and obtain the connection string.
+1. **Set Up Environment Variables:**
 
-bash
-Copy code
-# In the root directory
-docker-compose up --build
-Access the Application:
+    - In the root directory, create a .env file.
+    - Add the following content:
+        ```bash
+        MONGO_URI=your_mongo_connection_string
 
-Open your browser and navigate to http://localhost:3000 for the client.
-API routes are available at http://localhost:5000.
-Microservices Specific Requirements
-Docker Setup
-Dockerfiles are provided for each microservice.
-Docker Compose is configured for local testing.
-Task Specific Requirements
-Implemented user stories align with the project requirements.
-Additional functionality may be added, discussed in the reflections document.
-Reflections Document
-[Link to Reflections Document]
+1. **Build and Run the Project:**
+    ```bash
+    # In the root directory
+    docker-compose up --build
 
-Contributors
-[Your Name]
-[Collaborator 1]
-[Collaborator 2]
-Note: Ensure all the steps mentioned in the README.md file are accurate and up-to-date with the project version you are submitting. Test the project thoroughly to confirm its functionality as described.
+1. **Access the Application:**
+
+    - Open your browser and navigate to `http://localhost:3000` for the client.
+    - API routes are available at `http://localhost:5000`.
+## Microservices Specific Requirements
+- Docker Setup
+- Dockerfiles are provided for each microservice.
+- Docker Compose is configured for local testing.
+## Task Specific Requirements
+- Implemented user stories align with the project requirements.
+- Additional functionality may be added, discussed in the reflections document.
