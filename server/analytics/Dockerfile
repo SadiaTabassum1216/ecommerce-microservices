@@ -1,13 +1,13 @@
-FROM node:21.4.0
-
-WORKDIR /usr/src/app
-
-COPY ./../package*.json ./
-
+FROM node:lts-alpine
+WORKDIR /app
+COPY package*.json ./
 RUN npm install
-
-COPY ./../ .
+RUN npm install -g nodemon
+COPY . .
 
 EXPOSE 3006
 
 CMD ["node", "app.js"]
+
+
+# CMD ["nodemon", "index.js"]

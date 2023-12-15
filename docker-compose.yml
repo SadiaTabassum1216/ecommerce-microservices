@@ -1,4 +1,5 @@
-version: '3'
+version: '3.8'
+
 services:
   mongodb:
     image: mongo
@@ -6,8 +7,10 @@ services:
       - "27017:27017"
     volumes:
       - mongo-data:/data/db
+    restart: unless-stopped
 
   authentication:
+    build: ./server/authentication
     image: authentication-image
     ports:
       - "3001:3001"
@@ -15,6 +18,7 @@ services:
       - mongodb
 
   product:
+    build: ./server/product
     image: product-image
     ports:
       - "3002:3002"
@@ -23,6 +27,7 @@ services:
       - authentication
 
   inventory:
+    build: ./server/inventory
     image: inventory-image
     ports:
       - "3005:3005"
@@ -31,6 +36,7 @@ services:
       - authentication
 
   order:
+    build: ./server/order
     image: order-image
     ports:
       - "3003:3003"
@@ -40,6 +46,7 @@ services:
       - product
 
   payment:
+    build: ./server/payment
     image: payment-image
     ports:
       - "3004:3004"
@@ -50,6 +57,7 @@ services:
       - order
 
   analytics:
+    build: ./server/analytics
     image: analytics-image
     ports:
       - "3006:3006"
@@ -62,6 +70,7 @@ services:
       - payment
 
   react-client:
+    build: ./client
     image: react-app-image
     ports:
       - "3000:3000"
