@@ -34,7 +34,7 @@ const Analytics = require('../models/Analytics');
   updateProduct: (req, res) => {
     const { productId, updatedInfo } = req.body.updatedProduct;
 
-    axios.put('http://localhost:3002/products/updateProduct', { productId, updatedInfo })
+    axios.put('http:/host.docker.internal/products/updateProduct', { productId, updatedInfo })
       .then(productMicroserviceResponse => {
         if (productMicroserviceResponse.status === 200) {
           res.status(200).json({ success: true, updatedProduct: productMicroserviceResponse.data.item });

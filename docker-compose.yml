@@ -3,11 +3,13 @@ version: '3.8'
 services:
   mongodb:
     image: mongo
-    ports:
-      - "27017:27017"
+    container_name: mongodb
+    restart: unless-stopped
+    # ports:
+    #   - "27017:27017"
     volumes:
       - mongo-data:/data/db
-    restart: unless-stopped
+
 
   authentication:
     build: ./server/authentication
@@ -84,3 +86,19 @@ services:
 
 volumes:
   mongo-data:
+
+  # nginx:
+  #   image: nginx:latest
+  #   restart: unless-stopped
+  #   ports:
+  #     - 80:80
+  #   volumes:
+  #     - ./nginx.conf:/etc/nginx/conf.d/default.conf
+  #   depends_on:
+  #     - authentication
+  #     - product
+  #     - inventory
+  #     - order
+  #     - payment
+  #     - analytics
+

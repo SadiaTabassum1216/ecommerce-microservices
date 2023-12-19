@@ -8,10 +8,14 @@ const inventoryRoutes = require('./routes/inventoryRoutes');
 const app = express();
 
 // Connect to MongoDB
-mongoose.connect('mongodb://mongodb:27017/inventory', {
+// mongoose.connect('mongodb://mongodb:27017/ecom', {
+// });
+
+mongoose.connect('mongodb://mongodb:27017/ecom', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
+
 
 // Set up multer storage
 const storage = multer.memoryStorage(); 

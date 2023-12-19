@@ -8,10 +8,17 @@ const analyticsRoutes = require('./routes/analyticsRoutes');
 const app = express();
 
 // Connect to MongoDB
+// mongoose.connect('mongodb://mongodb:27017/ecom', {
+// });
+
 mongoose.connect('mongodb://mongodb:27017/ecom', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
+
+// mongoose.connect('mongodb://localhost:27017/ecom', {
+//   useUnifiedTopology: true,
+// });
 
 // Middleware
 app.use(bodyParser.json());

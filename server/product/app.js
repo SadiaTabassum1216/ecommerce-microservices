@@ -10,10 +10,15 @@ const productRoutes = require('./routes/productRoutes');
 const app = express();
 
 // Connect to MongoDB
+// mongoose.connect('mongodb://mongodb:27017/ecom', {
+// });
+
 mongoose.connect('mongodb://mongodb:27017/ecom', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
+
+
 
 // Multer Configuration
 const storage = multer.diskStorage({

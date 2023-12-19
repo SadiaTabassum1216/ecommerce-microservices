@@ -7,13 +7,13 @@ const AnalyticsController = {
     try {
       const { userEmail } = req.body;
       const getOrderAnalytics = await axios.post(
-        'http://localhost:3003/orders/getOrders',
+        'http:/host.docker.internal/orders/getOrders',
         { userEmail }
       );
       const orderItems = getOrderAnalytics.data
       const compiledItems = await AnalyticsService.compileOrderItems(orderItems);
       const data = await axios.post(
-        'http://localhost:3002/products/getCategory',
+        'http:/host.docker.internal/products/getCategory',
         { compiledItems }
       );
       const categories=data.data.categories;
@@ -26,7 +26,7 @@ const AnalyticsController = {
           maxCategory = category;
         }
       }
-      const response = await axios.post('http://localhost:3002/products/fetch', {
+      const response = await axios.post('http:/host.docker.internal/products/fetch', {
         category: maxCategory,
       });
       const items = response.data.items;

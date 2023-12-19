@@ -20,8 +20,8 @@ const PaymentController = {
           payment_method: 'paypal',
         },
         redirect_urls: {
-          return_url: 'http://localhost:3000',
-          cancel_url: 'http://localhost:3004/api/payment/cancel',
+          return_url: 'http:/host.docker.internal',
+          cancel_url: 'http:/host.docker.internal/api/payment/cancel',
         },
         transactions: [
           {

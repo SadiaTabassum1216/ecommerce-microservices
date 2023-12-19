@@ -6,12 +6,14 @@ const authRoutes = require('./routes/authRoutes');
 const mongoose = require('mongoose');
 
 const app = express();
-
 // Connect to MongoDB
 mongoose.connect('mongodb://mongodb:27017/ecom', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
 });
+
+// mongoose.connect('mongodb://mongodb:27017/ecom', {
+//   useNewUrlParser: true,
+//   useUnifiedTopology: true,
+// });
 
 // Middleware
 app.use(bodyParser.json());
